@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "331373015289",
+    "firebase_url": "https://agenciaviajes-desafio2-dsm-default-rtdb.firebaseio.com",
+    "project_id": "agenciaviajes-desafio2-dsm",
+    "storage_bucket": "agenciaviajes-desafio2-dsm.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331373015289:android:49e9f5b2f8e18e98553228",
+        "android_client_info": {
+          "package_name": "com.dsm.agenciaviajes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV7-6WRT9ilBMdwSkhaonVNltUYYFjPdg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
