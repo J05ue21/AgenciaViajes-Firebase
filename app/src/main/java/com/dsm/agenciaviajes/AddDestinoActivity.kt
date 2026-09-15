@@ -13,8 +13,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import java.util.UUID
 
-class AddDestinoActivity : AppCompatActivity()
-{
+class AddDestinoActivity : AppCompatActivity() {
     private lateinit var imgPreview: ImageView
     private lateinit var etNombre: EditText
     private lateinit var spPais: Spinner
@@ -29,8 +28,10 @@ class AddDestinoActivity : AppCompatActivity()
     private var idDestinoEditar: String? = null
 
     // esta variable almacena la referencia a la base de datos de firebase
-    private val database: DatabaseReference = FirebaseDatabase.getInstance().getReference("destinos")
-    private val storage: FirebaseStorage = FirebaseStorage.getInstance()    //val storage guarda la instancia de firebase storage
+    private val database: DatabaseReference =
+        FirebaseDatabase.getInstance().getReference("destinos")
+    private val storage: FirebaseStorage =
+        FirebaseStorage.getInstance()    //val storage guarda la instancia de firebase storage
 
     // Selector de imagen de la galería
     private val seleccionarImagenLanguage = registerForActivityResult(
@@ -43,8 +44,7 @@ class AddDestinoActivity : AppCompatActivity()
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_destino)
         imgPreview = findViewById(R.id.imgPreview)
@@ -62,11 +62,11 @@ class AddDestinoActivity : AppCompatActivity()
             this,
             R.array.paises_array,
             android.R.layout.simple_spinner_item
-            )
+        )
             .also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            spPais.adapter = adapter
-        }
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                spPais.adapter = adapter
+            }
 
         // boton para elegir imagen de la galeria
         btnSeleccionarImagen.setOnClickListener {
@@ -95,8 +95,8 @@ class AddDestinoActivity : AppCompatActivity()
         }
         btnGuardar.setOnClickListener { validarYGuardar() }
     }
-    private fun validarYGuardar()
-    {
+
+    private fun validarYGuardar() {
         val nombre = etNombre.text.toString().trim()
         val pais = spPais.selectedItem.toString()
         val precioStr = etPrecio.text.toString().trim()
@@ -105,38 +105,35 @@ class AddDestinoActivity : AppCompatActivity()
         // Validaciones de campos de entrada ---------------------------------------
 
         // es necesario ingresar nombre Destino
-        if (nombre.isEmpty())
-        {
+        if (nombre.isEmpty()) {
             etNombre.error = "Ingrese el nombre del destino"
             return
         }
 
         // es necesario ingresar precio
-        if (precioStr.isEmpty())
-        {
+        if (precioStr.isEmpty()) {
             etPrecio.error = "Ingrese un precio"
             return
         }
 
         // el precio debe ser mayor a 0
         val precio = precioStr.toDoubleOrNull()
-        if (precio == null || precio <= 0)
-        {
+        if (precio == null || precio <= 0) {
             etPrecio.error = "El precio debe ser un número mayor a 0"
             return
         }
 
         // se pide agregar una descripcion
-        if (descripcion.length < 20)
-        {
-            etDescripcion.error = "La descripción debe tener al menos 20 caracteres (${descripcion.length}/20)"
+        if (descripcion.length < 20) {
+            etDescripcion.error =
+                "La descripción debe tener al menos 20 caracteres (${descripcion.length}/20)"
             return
         }
 
         //debe agregar una imagen para el registro
-        if (imagenUri == null && imagenUrlExistente.isNullOrEmpty())
-        {
-            Toast.makeText(this, "Debe seleccionar una imagen para el destino", Toast.LENGTH_SHORT).show()
+        if (imagenUri == null && imagenUrlExistente.isNullOrEmpty()) {
+            Toast.makeText(this, "Debe seleccionar una imagen para el destino", Toast.LENGTH_SHORT)
+                .show()
             return
         }
         // Fin validaciones ----------------------------------------------------------------------
@@ -144,9 +141,8 @@ class AddDestinoActivity : AppCompatActivity()
         btnGuardar.isEnabled = false // deshabilitar boton para evitar multiples clicks
 
         // subir la imagen a Firebase storage --------------
-        if(imagenUri != null)
-        {
-        val storageRef = storage.reference.child("destinos_imagenes/${UUID.randomUUID()}.jpg")
+        if (imagenUri != null) {
+            val storageRef = storage.reference.child("destinos_imagenes/${UUID.randomUUID()}.jpg")
             storageRef.putFile(imagenUri!!)
                 .addOnSuccessListener {
                     storageRef.downloadUrl.addOnSuccessListener { url ->
@@ -155,12 +151,10 @@ class AddDestinoActivity : AppCompatActivity()
                 }
                 .addOnFailureListener { e ->
                     btnGuardar.isEnabled = true
-                    Toast.makeText(this, "Error al subir imagen: ${e.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Error al subir imagen: ${e.message}", Toast.LENGTH_SHORT)
+                        .show()
                 }
-        }
-
-        else
-        {
+        } else {
             // si no hay imagen se guarda la existente
             guardarEnRealtimeDB(nombre, pais, precio, descripcion, imagenUrlExistente!!)
         }
@@ -179,12 +173,17 @@ class AddDestinoActivity : AppCompatActivity()
             val destino = Destino(key, nombre, pais, precio, descripcion, imagenUrl)
             database.child(key).setValue(destino)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "El Destino se guardó exitosamente", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "El Destino se guardó exitosamente", Toast.LENGTH_SHORT)
+                        .show()
                     finish()
                 }
                 .addOnFailureListener { e ->
                     btnGuardar.isEnabled = true
-                    Toast.makeText(this, "Error al guardar el registro: ${e.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this,
+                        "Error al guardar el registro: ${e.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
         }
     }
