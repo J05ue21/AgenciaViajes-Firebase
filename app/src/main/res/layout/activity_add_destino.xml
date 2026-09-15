@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTituloFormulario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agregar un Nuevo Destino"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Vista previa de la imagen -->
+        <ImageView
+            android:id="@+id/imgPreview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:background="#E0E0E0"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnSeleccionarImagen"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seleccionar Imagen de Galería"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- nombre del Destino -->
+        <EditText
+            android:id="@+id/etNombreDestino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del Destino"
+            android:inputType="textCapWords"
+            android:minHeight="48dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- para seleccioner el pais -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seleccione el País:"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spPais"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- precio / costo del destino -->
+        <EditText
+            android:id="@+id/etPrecioDestino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Precio $ USD"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- descripción (breve, pero no menor a 20 caracteres) -->
+        <EditText
+            android:id="@+id/etDescripcionDestino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descripción (Mínimo 20 caracteres)"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:gravity="top"
+            android:minHeight="48dp"
+            android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/btnGuardarDestino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar Destino"
+            android:padding="12dp" />
+    </LinearLayout>
+</ScrollView>
