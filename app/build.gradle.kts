@@ -46,4 +46,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+
+    // para Firebase Storage
+    implementation("com.google.firebase:firebase-storage-ktx")
+
+    // Glide para cargar Imagenes
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }
