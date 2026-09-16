@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">AgenciaViajes</string>
+    <string name="agregar_un_nuevo_destino">Agregar un Nuevo Destino</string>
+    <string name="seleccionar_imagen">Seleccionar Imagen de Galería</string>
+    <string name="nombre_del_destino">Nombre del Destino</string>
+    <string name="seleccione_pais">Seleccione el País:</string>
+    <string name="precio_usd">Precio $ USD</string>
+    <string name="descripcion_destino">Descripción (Mínimo 20 caracteres)</string>
+    <string name="guardar_destino">Guardar Destino</string>
+
+
     <string-array name="paises_array">
         <item>Alemania</item>
         <item>Argentina</item>
