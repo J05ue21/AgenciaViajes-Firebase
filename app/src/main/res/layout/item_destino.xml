@@ -35,7 +35,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Nombre del Destino"
+                    android:text="@string/lista_nombre_destino"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -44,7 +44,7 @@
                     android:id="@+id/tvPrecioDestino"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$0.00"
+                    android:text="@string/precio_inicial_0"
                     android:textColor="@android:color/holo_green_dark"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="País"
+                android:text="@string/pais"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="14sp"
                 android:textStyle="italic" />
@@ -67,7 +67,7 @@
                 android:layout_marginTop="8dp"
                 android:maxLines="3"
                 android:ellipsize="end"
-                android:text="Descripción destino turístico"
+                android:text="@string/lista_descripcion_destino"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="14sp"/>
 
@@ -85,7 +85,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
-                    android:text="Editar" />
+                    android:text="@string/button_editar" />
 
                 <Button
                     android:id="@+id/btnEliminar"
@@ -93,7 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/holo_red_dark"
-                    android:text="Eliminar" />
+                    android:text="@string/button_eliminar" />
 
             </LinearLayout>
         </LinearLayout>

@@ -23,6 +23,12 @@
     <string name="confirmar_contrasena">Confirmar Contraseña</string>
     <string name="registrarse_button">Registrarse</string>
     <string name="ya_tienes_cuenta">¿Ya tienes cuenta? Inicia sesión</string>
+    <string name="lista_nombre_destino">Nombre del Destino</string>
+    <string name="precio_inicial_0">$0.00</string>
+    <string name="pais">País</string>
+    <string name="lista_descripcion_destino">Descripción destino turístico</string>
+    <string name="button_editar">Editar</string>
+    <string name="button_eliminar">Eliminar</string>
 
 
     <string-array name="paises_array">
