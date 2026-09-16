@@ -2,8 +2,6 @@ package com.dsm.agenciaviajes
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
@@ -21,6 +19,7 @@ class MainActivity : AppCompatActivity()
     private lateinit var rvDestinos: RecyclerView
     private lateinit var tvEmpty: TextView
     private lateinit var fabAgregar: FloatingActionButton
+    private lateinit var btnLogoutToolbar: View
     private lateinit var adapter: DestinoAdapter
 
     private val listaDestinos = mutableListOf<Destino>()
@@ -37,6 +36,11 @@ class MainActivity : AppCompatActivity()
         rvDestinos = findViewById(R.id.rvDestinos)
         tvEmpty = findViewById(R.id.tvEmpty)
         fabAgregar = findViewById(R.id.fabAgregar)
+        btnLogoutToolbar = findViewById(R.id.btnLogoutToolbar)
+
+        btnLogoutToolbar.setOnClickListener {
+            confirmarCierreSesion()
+        }
 
         rvDestinos.layoutManager = LinearLayoutManager(this)
         adapter = DestinoAdapter(
@@ -112,23 +116,6 @@ class MainActivity : AppCompatActivity()
             }
             .setNegativeButton(getString(R.string.boton_para_cancelar), null) // No hace nada al hacer clic en "Cancelar"
             .show()
-    }
-
-    // cerrar Sesión
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return if (item.itemId == R.id.action_logout) {
-            confirmarCierreSesion()
-            true
-        }
-        else
-        {
-            super.onOptionsItemSelected(item)
-        }
     }
 
     private fun confirmarCierreSesion()
