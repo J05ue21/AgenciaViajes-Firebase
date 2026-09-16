@@ -20,7 +20,9 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:title="Agencia de Viajes" />
+                android:background="@color/primary"
+                app:title="Agencia de Viajes"
+                app:titleTextColor="@color/icons" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -48,6 +50,8 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="24dp"
         android:contentDescription="@string/agregar_destino"
+        app:backgroundTint="@color/accent"
+        app:tint="@color/icons"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
