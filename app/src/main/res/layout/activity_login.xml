@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Agencia de Viajes"
+            android:text="@string/agencia_de_viajes"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="@android:color/black"
@@ -24,14 +24,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Inicia sesión para continuar"
+            android:text="@string/inicia_sesion"
             android:textSize="16sp"
             android:layout_marginBottom="32dp"/>
         <EditText
             android:id="@+id/etEmailLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Correo Electrónico"
+            android:hint="@string/correo"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:layout_marginBottom="16dp"/>
@@ -40,7 +40,7 @@
             android:id="@+id/etPasswordLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contraseña"
+            android:hint="@string/contrasena"
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:layout_marginBottom="24dp"/>
@@ -48,14 +48,14 @@
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Iniciar Sesión"
+            android:text="@string/button_iniciar_sesion"
             android:padding="12dp"/>
 
         <TextView
             android:id="@+id/tvIrARegistro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¿No tienes cuenta? Regístrate aquí"
+            android:text="@string/no_tienes_cuenta_aun"
             android:textColor="@android:color/holo_blue_dark"
             android:textStyle="bold"
             android:padding="12dp"
