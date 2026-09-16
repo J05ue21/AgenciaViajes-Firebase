@@ -16,6 +16,13 @@
     <string name="contrasena">Contraseña</string>
     <string name="button_iniciar_sesion">Iniciar Sesión</string>
     <string name="no_tienes_cuenta_aun">¿No tienes cuenta? Regístrate aquí</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="registrate">Regístrate para conocer nuestros destinos</string>
+    <string name="correo_electronico">Correo Electrónico</string>
+    <string name="contrasena_minimo_6">Contraseña (mín 6 caracteres)</string>
+    <string name="confirmar_contrasena">Confirmar Contraseña</string>
+    <string name="registrarse_button">Registrarse</string>
+    <string name="ya_tienes_cuenta">¿Ya tienes cuenta? Inicia sesión</string>
 
 
     <string-array name="paises_array">
