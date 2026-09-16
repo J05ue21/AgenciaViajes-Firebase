@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="No hay destinos registrados aún\nPara agregar uno nuevo, presiona '+'"
+            android:text="@string/presiona_para_agregar"
             android:textSize="16sp"
             android:visibility="gone" />
 
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="24dp"
-        android:contentDescription="Agregar Destino"
+        android:contentDescription="@string/agregar_destino"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
