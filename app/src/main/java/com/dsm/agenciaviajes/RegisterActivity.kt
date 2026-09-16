@@ -31,25 +31,25 @@ class RegisterActivity : AppCompatActivity() {
             val confirmPassword = etConfirmPassword.text.toString().trim()
 
             if (email.isEmpty()) {
-                etEmail.error = "Ingrese su correo electrónico"
+                etEmail.error = getString(R.string.register_correo_kt)
                 etEmail.requestFocus()
                 return@setOnClickListener
             }
 
             if (password.isEmpty()) {
-                etPassword.error = "Ingrese su contraseña"
+                etPassword.error = getString(R.string.register_ingrese_contrasena_kt)
                 etPassword.requestFocus()
                 return@setOnClickListener
                 }
 
             if (password.length < 6) {
-                etPassword.error = "La contraseña debe tener al menos 6 caracteres"
+                etPassword.error = getString(R.string.register_longitud_contrasena_kt)
                 etPassword.requestFocus()
                 return@setOnClickListener
             }
 
             if (password != confirmPassword) {
-                etConfirmPassword.error = "Las contraseñas no coinciden"
+                etConfirmPassword.error = getString(R.string.register_aviso_contra_no_coinciden_tk)
                 etConfirmPassword.requestFocus()
                 return@setOnClickListener
             }
@@ -60,7 +60,7 @@ class RegisterActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         Toast.makeText(
                             this,
-                            "Registro exitoso",
+                            getString(R.string.register_registro_exitoso_kt),
                             Toast.LENGTH_SHORT
                         ).show()
 
@@ -69,7 +69,7 @@ class RegisterActivity : AppCompatActivity() {
                     } else {
                         Toast.makeText(
                             this,
-                            "Error en el registro",
+                            getString(R.string.register_error_en_registro_kt),
                             Toast.LENGTH_SHORT
                         ).show()
                     }

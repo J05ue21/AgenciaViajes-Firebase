@@ -54,6 +54,12 @@
     <string name="login_saludo_bienvenido_kt">Bienvenido/a</string>
     <string name="login_error_login_kt">Error en el inicio de sesión</string>
     <string name="mainactivity_error_cargar_kt">Error al cargar: %1$s</string>
+    <string name="register_correo_kt">Ingrese su correo electrónico</string>
+    <string name="register_ingrese_contrasena_kt">Ingrese su contraseña</string>
+    <string name="register_longitud_contrasena_kt">La contraseña debe tener al menos 6 caracteres</string>
+    <string name="register_aviso_contra_no_coinciden_tk">Las contraseñas no coinciden</string>
+    <string name="register_registro_exitoso_kt">Registro exitoso</string>
+    <string name="register_error_en_registro_kt">Error en el registro</string>
 
 
     <string-array name="paises_array">
