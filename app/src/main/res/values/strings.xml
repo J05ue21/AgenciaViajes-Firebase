@@ -30,6 +30,16 @@
     <string name="button_editar">Editar</string>
     <string name="button_eliminar">Eliminar</string>
 
+    <string name="editar_destino">Editar Destino</string>
+    <string name="actualizar_destino_activity_kt">Actualizar Destino</string>
+    <string name="nombre_destino_activity_kt">Ingrese el nombre del destino</string>
+    <string name="ingrese_precio_destinoactivity_kt">Ingrese un precio</string>
+    <string name="validar_precio_mayor_0">El precio debe ser un número mayor a 0</string>
+    <string name="debe_seleccionar_imagen">Debe seleccionar una imagen para el destino</string>
+    <string name="error_al_guardar_imagen">Error al guardar la imagen</string>
+    <string name="destino_guardado_exito">El Destino se guardó exitosamente</string>
+    <string name="error_al_guardar">Error al guardar el registro: %1$s</string>
+
 
     <string-array name="paises_array">
         <item>Alemania</item>

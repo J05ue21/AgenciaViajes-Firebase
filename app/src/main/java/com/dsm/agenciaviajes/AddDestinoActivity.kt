@@ -88,8 +88,8 @@ class AddDestinoActivity : AppCompatActivity() {
             // mostrar imagen exixtente
             Glide.with(this).load(imagenUrlExistente).into(imgPreview)
 
-            tvTitulo.text = "Editar Destino"
-            btnGuardar.text = "Actualizar Destino"
+            tvTitulo.text = getString(R.string.editar_destino)
+            btnGuardar.text = getString(R.string.actualizar_destino_activity_kt)
         }
         btnGuardar.setOnClickListener { validarYGuardar() }
     }
@@ -104,20 +104,20 @@ class AddDestinoActivity : AppCompatActivity() {
 
         // es necesario ingresar nombre Destino
         if (nombre.isEmpty()) {
-            etNombre.error = "Ingrese el nombre del destino"
+            etNombre.error = getString(R.string.nombre_destino_activity_kt)
             return
         }
 
         // es necesario ingresar precio
         if (precioStr.isEmpty()) {
-            etPrecio.error = "Ingrese un precio"
+            etPrecio.error = getString(R.string.ingrese_precio_destinoactivity_kt)
             return
         }
 
         // el precio debe ser mayor a 0
         val precio = precioStr.toDoubleOrNull()
         if (precio == null || precio <= 0) {
-            etPrecio.error = "El precio debe ser un número mayor a 0"
+            etPrecio.error = getString(R.string.validar_precio_mayor_0)
             return
         }
 
@@ -130,7 +130,7 @@ class AddDestinoActivity : AppCompatActivity() {
 
         //debe agregar una imagen para el registro
         if (imagenUri == null && imagenUrlExistente.isNullOrEmpty()) {
-            Toast.makeText(this, "Debe seleccionar una imagen para el destino", Toast.LENGTH_SHORT)
+            Toast.makeText(this, getString(R.string.debe_seleccionar_imagen), Toast.LENGTH_SHORT)
                 .show()
             return
         }
@@ -149,7 +149,7 @@ class AddDestinoActivity : AppCompatActivity() {
             guardarEnRealtimeDB(nombre, pais, precio, descripcion, rutaImagenFinal)
         } else {
             btnGuardar.isEnabled = true
-            Toast.makeText(this, "Error al guardar la imagen", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.error_al_guardar_imagen), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -184,7 +184,8 @@ class AddDestinoActivity : AppCompatActivity() {
             val destino = Destino(key, nombre, pais, precio, descripcion, imagenUrl)
             database.child(key).setValue(destino)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "El Destino se guardó exitosamente", Toast.LENGTH_SHORT)
+                    Toast.makeText(this,
+                        getString(R.string.destino_guardado_exito), Toast.LENGTH_SHORT)
                         .show()
                     finish()
                 }
@@ -192,7 +193,7 @@ class AddDestinoActivity : AppCompatActivity() {
                     btnGuardar.isEnabled = true
                     Toast.makeText(
                         this,
-                        "Error al guardar el registro: ${e.message}",
+                        getString(R.string.error_al_guardar, e.message),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
