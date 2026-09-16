@@ -9,6 +9,7 @@
     <string name="guardar_destino">Guardar Destino</string>
     <string name="presiona_para_agregar">No hay destinos registrados aún\nPara agregar uno nuevo, presiona \'+\'</string>
     <string name="agregar_destino">Agregar Destino</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
 
 
     <string-array name="paises_array">
