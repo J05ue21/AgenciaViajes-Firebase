@@ -30,8 +30,6 @@ class AddDestinoActivity : AppCompatActivity() {
     // esta variable almacena la referencia a la base de datos de firebase
     private val database: DatabaseReference =
         FirebaseDatabase.getInstance().getReference("destinos")
-    private val storage: FirebaseStorage =
-        FirebaseStorage.getInstance()    //val storage guarda la instancia de firebase storage
 
     // Selector de imagen de la galería
     private val seleccionarImagenLanguage = registerForActivityResult(
@@ -140,23 +138,36 @@ class AddDestinoActivity : AppCompatActivity() {
 
         btnGuardar.isEnabled = false // deshabilitar boton para evitar multiples clicks
 
-        // subir la imagen a Firebase storage --------------
-        if (imagenUri != null) {
-            val storageRef = storage.reference.child("destinos_imagenes/${UUID.randomUUID()}.jpg")
-            storageRef.putFile(imagenUri!!)
-                .addOnSuccessListener {
-                    storageRef.downloadUrl.addOnSuccessListener { url ->
-                        guardarEnRealtimeDB(nombre, pais, precio, descripcion, url.toString())
-                    }
-                }
-                .addOnFailureListener { e ->
-                    btnGuardar.isEnabled = true
-                    Toast.makeText(this, "Error al subir imagen: ${e.message}", Toast.LENGTH_SHORT)
-                        .show()
-                }
+        // Guardar ruta local si se seleccionó nueva imagen, o conservar la existente
+        val rutaImagenFinal = if (imagenUri != null) {
+            guardarImagenLocalmente(imagenUri!!)
         } else {
-            // si no hay imagen se guarda la existente
-            guardarEnRealtimeDB(nombre, pais, precio, descripcion, imagenUrlExistente!!)
+            imagenUrlExistente
+        }
+
+        if (rutaImagenFinal != null) {
+            guardarEnRealtimeDB(nombre, pais, precio, descripcion, rutaImagenFinal)
+        } else {
+            btnGuardar.isEnabled = true
+            Toast.makeText(this, "Error al guardar la imagen", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun guardarImagenLocalmente(uri: Uri): String? {
+        return try {
+            val inputStream = contentResolver.openInputStream(uri)
+            val archivoLocal = java.io.File(filesDir, "${UUID.randomUUID()}.jpg")
+            val outputStream = java.io.FileOutputStream(archivoLocal)
+
+            inputStream?.use { input ->
+                outputStream.use { output ->
+                    input.copyTo(output)
+                }
+            }
+            archivoLocal.absolutePath // devuelve la ruta interna /data/user/0/...
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
         }
     }
 
