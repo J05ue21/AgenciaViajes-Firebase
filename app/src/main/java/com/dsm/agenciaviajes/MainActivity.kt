@@ -99,16 +99,17 @@ class MainActivity : AppCompatActivity()
     // Eliminar un registro después de confirmar
     private fun confirmarEliminacion(destino: Destino) {
         AlertDialog.Builder(this)
-            .setTitle("Confirmar eliminación")
-            .setMessage("¿Estás seguro de que deseas eliminar el registro '${destino.nombre}'?")
-            .setPositiveButton("Eliminar") { _, _ ->
+            .setTitle(getString(R.string.titulo_confirmar_eliminacion))
+            .setMessage(getString(R.string.seguro_eliminar, destino.nombre))
+            .setPositiveButton(getString(R.string.button_eliminar_main_kt)) { _, _ ->
                 destino.id?.let { key ->
                     database.child(key).removeValue().addOnSuccessListener {
-                        Toast.makeText(this, "Resgistro del Destino eliminado", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,
+                            getString(R.string.mensaje_destino_eliminado), Toast.LENGTH_SHORT).show()
                     }
                 }
             }
-            .setNegativeButton("Cancelar", null) // No hace nada al hacer clic en "Cancelar"
+            .setNegativeButton(getString(R.string.boton_para_cancelar), null) // No hace nada al hacer clic en "Cancelar"
             .show()
     }
 
@@ -132,16 +133,16 @@ class MainActivity : AppCompatActivity()
     private fun confirmarCierreSesion()
     {
         AlertDialog.Builder(this)
-            .setTitle("Cerrar Sesión")
-            .setMessage("¿Estás seguro que deseas salir de tu cuenta?")
-            .setPositiveButton("Sí, salir") {_, _ ->
+            .setTitle(getString(R.string.button_cerrar_sesion))
+            .setMessage(getString(R.string.confirmar_cerrar_sesion))
+            .setPositiveButton(getString(R.string.si_confirma_salir)) { _, _ ->
                 FirebaseAuth.getInstance().signOut()
                 val intent = Intent(this, LoginActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
                 finish()
             }
-            .setNegativeButton("Cancelar", null)
+            .setNegativeButton(getString(R.string.button_cancelar_cierre_sesion), null)
             .show()
     }
 

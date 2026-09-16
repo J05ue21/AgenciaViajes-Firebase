@@ -40,6 +40,16 @@
     <string name="destino_guardado_exito">El Destino se guardó exitosamente</string>
     <string name="error_al_guardar">Error al guardar el registro: %1$s</string>
 
+    <string name="seguro_eliminar">¿Estás seguro de que deseas eliminar el registro \'%1$s\'?</string>
+    <string name="titulo_confirmar_eliminacion">Confirmar eliminación</string>
+    <string name="mensaje_destino_eliminado">Registro del Destino eliminado</string>
+    <string name="boton_para_cancelar">Cancelar</string>
+    <string name="button_cerrar_sesion">Cerrar Sesión</string>
+    <string name="confirmar_cerrar_sesion">¿Estás seguro que deseas salir de tu cuenta?</string>
+    <string name="si_confirma_salir">Sí, salir</string>
+    <string name="button_cancelar_cierre_sesion">Cancelar</string>
+    <string name="button_eliminar_main_kt">Eliminar</string>
+
 
     <string-array name="paises_array">
         <item>Alemania</item>
