@@ -14,7 +14,7 @@
             android:id="@+id/tvTituloFormulario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Agregar un Nuevo Destino"
+            android:text="@string/agregar_un_nuevo_destino"
             android:textStyle="bold"
             android:layout_marginBottom="16dp" />
 
@@ -32,7 +32,7 @@
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Seleccionar Imagen de Galería"
+            android:text="@string/seleccionar_imagen"
             android:layout_marginBottom="16dp"/>
 
         <!-- nombre del Destino -->
@@ -40,7 +40,7 @@
             android:id="@+id/etNombreDestino"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre del Destino"
+            android:hint="@string/nombre_del_destino"
             android:inputType="textCapWords"
             android:minHeight="48dp"
             android:layout_marginBottom="12dp" />
@@ -49,7 +49,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Seleccione el País:"
+            android:text="@string/seleccione_pais"
             android:textStyle="bold"
             android:layout_marginBottom="4dp" />
 
@@ -64,7 +64,7 @@
             android:id="@+id/etPrecioDestino"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Precio $ USD"
+            android:hint="@string/precio_usd"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             android:layout_marginBottom="12dp" />
@@ -74,7 +74,7 @@
             android:id="@+id/etDescripcionDestino"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Descripción (Mínimo 20 caracteres)"
+            android:hint="@string/descripcion_destino"
             android:inputType="textMultiLine"
             android:lines="4"
             android:gravity="top"
@@ -85,7 +85,7 @@
             android:id="@+id/btnGuardarDestino"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guardar Destino"
+            android:text="@string/guardar_destino"
             android:padding="12dp" />
     </LinearLayout>
 </ScrollView>
