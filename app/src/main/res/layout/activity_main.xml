@@ -22,7 +22,27 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/primary"
                 app:title="Agencia de Viajes"
-                app:titleTextColor="@color/icons" />
+                app:titleTextColor="@color/icons">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogoutToolbar"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="8dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:padding="8dp"
+                    android:text="@string/cerrar_sesion"
+                    android:textStyle="bold"
+                    android:textColor="@color/icons"
+                    android:textSize="16sp"
+                    app:rippleColor="#40FFFFFF" />
+
+            </com.google.android.material.appbar.MaterialToolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
 
