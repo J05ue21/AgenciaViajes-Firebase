@@ -28,12 +28,12 @@ class LoginActivity : AppCompatActivity() {
             val password = etPassword.text.toString().trim()
 
             if (email.isEmpty())    {
-                etEmail.error = "Ingrese su correo electrónico"
+                etEmail.error = getString(R.string.login_ingrese_correo_kt)
                 etEmail.requestFocus()  // coloca el cursor en el campo de texto
                 return@setOnClickListener
             }
             if (password.isEmpty()) {
-                etPassword.error = "Ingrese su contraseña"
+                etPassword.error = getString(R.string.login_ingrese_contrasena_kt)
                 etPassword.requestFocus()
                 return@setOnClickListener
             }
@@ -43,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         Toast.makeText(
                             this,
-                            "Bienvenido/a",
+                            getString(R.string.login_saludo_bienvenido_kt),
                             Toast.LENGTH_SHORT)
                             .show()
                         irAMainActivity()
@@ -51,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
                     } else {
                         Toast.makeText(
                             this,
-                            "Error en el inicio de sesión",
+                            getString(R.string.login_error_login_kt),
                             Toast.LENGTH_SHORT)
                             .show()
                     }

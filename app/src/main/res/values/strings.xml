@@ -49,6 +49,10 @@
     <string name="si_confirma_salir">Sí, salir</string>
     <string name="button_cancelar_cierre_sesion">Cancelar</string>
     <string name="button_eliminar_main_kt">Eliminar</string>
+    <string name="login_ingrese_correo_kt">Ingrese su correo electrónico</string>
+    <string name="login_ingrese_contrasena_kt">Ingrese su contraseña</string>
+    <string name="login_saludo_bienvenido_kt">Bienvenido/a</string>
+    <string name="login_error_login_kt">Error en el inicio de sesión</string>
 
 
     <string-array name="paises_array">
