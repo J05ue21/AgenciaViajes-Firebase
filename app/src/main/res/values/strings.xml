@@ -53,6 +53,7 @@
     <string name="login_ingrese_contrasena_kt">Ingrese su contraseña</string>
     <string name="login_saludo_bienvenido_kt">Bienvenido/a</string>
     <string name="login_error_login_kt">Error en el inicio de sesión</string>
+    <string name="mainactivity_error_cargar_kt">Error al cargar: %1$s</string>
 
 
     <string-array name="paises_array">

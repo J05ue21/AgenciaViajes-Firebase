@@ -78,7 +78,8 @@ class MainActivity : AppCompatActivity()
 
             // si hay un error al cargar los datos, se muestra un mensaje
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@MainActivity, "Error al cargar: ${error.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity,
+                    getString(R.string.mainactivity_error_cargar_kt, error.message), Toast.LENGTH_SHORT).show()
             }
         })
     }
