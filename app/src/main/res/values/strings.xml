@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AgenciaViajes</string>
+    <string name="app_name">Mochila y Brujula</string>
     <string name="agregar_un_nuevo_destino">Agregar un Nuevo Destino</string>
     <string name="seleccionar_imagen">Seleccionar Imagen de Galería</string>
     <string name="nombre_del_destino">Nombre del Destino</string>
