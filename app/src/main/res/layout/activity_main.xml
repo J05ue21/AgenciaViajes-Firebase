@@ -21,14 +21,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/primary"
-                app:title="Agencia de Viajes"
+                app:title="@string/app_name"
                 app:titleTextColor="@color/icons">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnLogoutToolbar"
                     style="@style/Widget.Material3.Button.TextButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_gravity="end|center_vertical"
                     android:layout_marginEnd="8dp"
                     android:insetTop="0dp"
